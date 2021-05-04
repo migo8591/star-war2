@@ -1,14 +1,14 @@
 import React from "react";
 import { Navbar, Image, Nav, DropdownButton, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import walmart from "../../img/walmart.png";
+import starlogo from "../../img/starlogo.png";
 
 export const NavbarMenu = () => {
 	return (
 		<Navbar className="navbar navbar-light bg-warning mb-3">
 			<Navbar.Brand>
 				<Link to="/">
-					<Image src={walmart} width="40" height="40" alt="Star Wars" />
+					<Image src={starlogo} width="40" height="40" alt="Star Wars" />
 				</Link>
 			</Navbar.Brand>
 

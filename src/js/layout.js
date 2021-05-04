@@ -6,14 +6,10 @@ import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
 
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
 import { NavbarMenu } from "./component/navbarMenu";
 import { Footer } from "./component/footer";
-import { Planetas } from "./views/planetas";
-import { Personas } from "./views/personas";
 
 const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -31,8 +27,7 @@ const Layout = () => {
 						<Col>
 							<Switch>
 								<Route exact path="/" component={Home} />
-								<Route exact path="/planetas" component={Planetas} />
-								<Route exact path="/personas" component={Personas} />
+								{/* <Route exact path="/planetas" component={Planetas} /> */}
 							</Switch>
 						</Col>
 					</Row>
