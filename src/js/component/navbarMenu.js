@@ -27,7 +27,7 @@ export const NavbarMenu = () => {
 				<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
 				<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
 			</DropdownButton> */}
-				<div className="ml-auto">
+				<div className="mx-5">
 					<DropdownButton id="dropdown-basic-button" title="Favoritos">
 						<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
 						<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
