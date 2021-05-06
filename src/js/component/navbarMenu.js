@@ -14,19 +14,14 @@ export const NavbarMenu = () => {
 				</Navbar.Brand>
 
 				<Nav className="mr-auto">
-					<Link className="nav-link text-primary" to="/planetas">
+					{/* <Link className="nav-link text-primary" to="/planetas">
 						Planetas
 					</Link>
 					<Link className="nav-link text-primary" to="/personas">
 						Personas
-					</Link>
+					</Link> */}
 				</Nav>
 
-				{/* <DropdownButton id="dropdown-basic-button" title="Favoritos">
-				<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-				<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-				<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-			</DropdownButton> */}
 				<div className="mx-5">
 					<DropdownButton id="dropdown-basic-button" title="Favoritos">
 						<Dropdown.Item href="#/action-1">Action</Dropdown.Item>

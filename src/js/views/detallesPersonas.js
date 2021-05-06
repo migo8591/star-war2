@@ -8,16 +8,16 @@ import "../../styles/detallesPersonas.scss";
 export const DetallesPersonas = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
+
 	return (
 		<div className="detallesPerson">
 			<div className="container mt-5">
 				<div className="row">
 					<div className="col-sm mt-1">
-						{/* <img src={personajes} alt="star wars personas" /> */}
 						<img src={personajes} className="img-fluid" alt="Responsive image" />
 					</div>
 					<div className="col-sm text-center">
-						<h5>Rocky</h5>
+						<h5>{store.peopleList[params.theid].name}</h5>
 						<p>
 							A proud world with a rich warrior culture, Mandalore is home to various clans united under
 							Bo-Katan Kryze, wielder of the Darksaber.
