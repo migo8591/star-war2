@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { Container, Row, Col } from "react-bootstrap";
 import ScrollToTop from "./component/scrollToTop";
-
 import { Home } from "./views/home";
+import { DetallesPersonas } from "./views/detallesPersonas";
 
 import injectContext from "./store/appContext";
 
@@ -24,14 +24,13 @@ const Layout = () => {
 							<Col>
 								<Switch>
 									<Route exact path="/" component={Home} />
-									{/* <Route exact path="/planetas" component={Planetas} /> */}
+									<Route exact path="/detallesPersonas" component={DetallesPersonas} />
 								</Switch>
 							</Col>
 						</Row>
-
-						<Footer />
 					</ScrollToTop>
 				</Container>
+				<Footer />
 			</BrowserRouter>
 		</div>
 	);

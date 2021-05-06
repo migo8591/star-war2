@@ -12,7 +12,7 @@ export const Planetas = () => {
 	}, []);
 
 	return (
-		<div>
+		<div className="mt-3">
 			<span>{JSON.stringify(store.favorites)}</span>
 
 			<div className="wrapper">

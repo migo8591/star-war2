@@ -5,7 +5,7 @@ import { Personas } from "../component/personas";
 import { Planetas } from "../component/planetas";
 
 export const Home = () => (
-	<div className="text-center mt-5">
+	<div className="text-center">
 		<h1>Personas</h1>
 		<Personas />
 		<h1>Planetas</h1>
