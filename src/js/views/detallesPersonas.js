@@ -1,71 +1,79 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
+import { Row, Col, Table, Media, Container, Button, Card } from "react-bootstrap";
 import { Context } from "../store/appContext";
 import personajes from "../../img/personajes.jpg";
 import "../../styles/detallesPersonas.scss";
 
 export const DetallesPersonas = props => {
-	const { store, actions } = useContext(Context);
-	const params = useParams();
+	const { id } = useParams();
+	const intId = parseInt(Id);
+	const history = useHistory;
 
+	const goBack = () => {
+		history.goBack();
+	};
 	return (
-		<div className="detallesPerson">
-			<div className="container mt-5">
-				<div className="row">
-					<div className="col-sm mt-1">
-						<img src={personajes} className="img-fluid" alt="Responsive image" />
-					</div>
-					<div className="col-sm text-center">
-						<h5>{store.peopleList[params.theid].name}</h5>
-						<p>
-							A proud world with a rich warrior culture, Mandalore is home to various clans united under
-							Bo-Katan Kryze, wielder of the Darksaber.
-						</p>
-					</div>
-					<table className="table m-3">
-						<thead>
-							<tr>
-								<th scope="col">Nombre</th>
-								<th scope="col">Raza</th>
-								<th scope="col">Sexo</th>
-								<th scope="col">Edad</th>
-								<th scope="col">Peso</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								{/* <th scope="row">1</th> */}
-								<td>Rocky</td>
-								<td>Boxer</td>
-								<td>Macho</td>
-								<td>2 años</td>
-								<td>15 kg</td>
-							</tr>
-						</tbody>
-					</table>
-
-					<div className="container">
-						<div className="row">
-							<div className="col-9">
-								<Link to="/">
-									<button type="button" className="btn btn-primary mr-2">
-										Regresar
-									</button>
-								</Link>
+		<Container>
+			<Media className="mt-5">
+				{store.planetsList.map((item, index) => {
+					if (index == intId) {
+						return (
+							<div key={index}>
+								<Row>
+									<Col>
+										<Card.Img variant="top" src={personajes} />
+									</Col>
+									<Col>
+										<Media.Body className="text-center">
+											<h5>{each.name}</h5>
+											<p>
+												During the Clone Wars, a coup orchestrated by Death Watch topples the
+												pacifist regime of the New Mandalorians and returns the armored warrior
+												culture to a position of power over the isolated world. What the average
+												Mandalorian citizen does not realize, however, is that the takeover is
+												in truth masterminded by a secret syndicate of criminals the Shadow
+												Collective led by Maul. Mauls loyal Mandalorians modify their armor to
+												reflect allegiance to the Dark Lord. These super commandos wear armor of
+												red and black, and some even fashion horns atop their helmets, to better
+												resemble their Nightbrother leader. During the Siege of Mandalore, Gar
+												Saxon leads the elite fighting force.
+											</p>
+										</Media.Body>
+									</Col>
+								</Row>
+								<Table responsive="sm">
+									<thead>
+										<tr>
+											<th>Name</th>
+											<th>Birth Year</th>
+											<th>Gender</th>
+											<th>Heigth</th>
+											<th>Skin Color</th>
+											<th>Eye Color</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>{each.name}</td>
+											<td>{each.birth_year}</td>
+											<td>{each.gender}</td>
+											<td>{each.height}</td>
+											<td>{each.skin_color}</td>
+											<td>{each.eye_color}</td>
+										</tr>
+									</tbody>
+								</Table>
+								<Button variant="dark" onClick={() => goBack()}>
+									Go Back
+								</Button>
 							</div>
-							<div className="col-3 d-flex justify-content-end">
-								<Link to="/adoptform">
-									<button type="button" className="btn btn-primary ">
-										Formulario de adopción
-									</button>
-								</Link>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+						);
+					}
+				})}
+			</Media>
+		</Container>
 	);
 };
 

@@ -6,7 +6,7 @@ import starlogo from "../../img/starlogo.png";
 export const Footer = () => {
 	return (
 		<div className="text-center mt-5 d-flex flex-column container-flux bg-warning">
-			<h1>Footer</h1>
+			<h1 />
 		</div>
 	);
 };
