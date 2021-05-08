@@ -37,7 +37,9 @@ export const Personas = () => {
 											<span>{item.eye_color}</span>
 										</p>
 									</Card.Text>
-									<Button variant="success">Learn more!</Button>
+									<Link to={"/detallesPersonas/" + index}>
+										<Button variant="success">Learn more!</Button>
+									</Link>
 								</Card.Body>
 							</Card>
 						</div>
