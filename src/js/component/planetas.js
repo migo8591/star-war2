@@ -37,7 +37,7 @@ export const Planetas = () => {
 											<span>{item.diameter}</span>
 										</p>
 									</Card.Text>
-									<Link to={`/people/${index}`}>
+									<Link to={"/detallesPlanetas/" + index}>
 										<Button variant="success">Learn more!</Button>
 									</Link>
 								</Card.Body>

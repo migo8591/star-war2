@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { DetallesPersonas } from "./views/detallesPersonas";
+import { DetallesPlanetas } from "./views/detallesPlanetas";
 
 import injectContext from "./store/appContext";
 
@@ -26,6 +27,9 @@ const Layout = () => {
 									<Route exact path="/" component={Home} />
 									<Route exact path="/detallesPersonas/:theid">
 										<DetallesPersonas />
+									</Route>
+									<Route exact path="/detallesPlanetas/:theid">
+										<DetallesPlanetas />
 									</Route>
 								</Switch>
 							</Col>

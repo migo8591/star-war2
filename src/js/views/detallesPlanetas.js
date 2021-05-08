@@ -6,7 +6,7 @@ import personajes from "../../img/personajes.jpg";
 import { Image } from "react-bootstrap";
 import "../../styles/detallesPersonas.scss";
 
-export const DetallesPersonas = props => {
+export const DetallesPlanetas = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
@@ -17,7 +17,7 @@ export const DetallesPersonas = props => {
 						<Image src={personajes} width={400} height={300} alt="Star Wars" />
 					</div>
 					<div className="col-sm text-center mt-5">
-						<h1>{store.peopleList[params.theid].name}</h1>
+						<h1>{store.planetsList[params.theid].name}</h1>
 						<p id="descripcion">
 							During the Clone Wars, a coup orchestrated by Death Watch topples the pacifist regime of the
 							New Mandalorians and returns the armored warrior culture to a position of power over the
@@ -33,21 +33,21 @@ export const DetallesPersonas = props => {
 						<thead>
 							<tr>
 								<th scope="col">Name</th>
-								<th scope="col">Birth Year</th>
-								<th scope="col">Gender</th>
-								<th scope="col">Heigth</th>
-								<th scope="col">Skin Color</th>
-								<th scope="col">Eye Color</th>
+								<th scope="col">Climate</th>
+								<th scope="col">Population</th>
+								<th scope="col">Orbital Periodo</th>
+								<th scope="col">Rotation Period</th>
+								<th scope="col">Diameter</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>{store.peopleList[params.theid].name}</td>
-								<td>{store.peopleList[params.theid].birth_year}</td>
-								<td>{store.peopleList[params.theid].gender}</td>
-								<td>{store.peopleList[params.theid].height}</td>
-								<td>{store.peopleList[params.theid].skin_color}</td>
-								<td>{store.peopleList[params.theid].eye_color}</td>
+								<td>{store.planetsList[params.theid].name}</td>
+								<td>{store.planetsList[params.theid].climate}</td>
+								<td>{store.planetsList[params.theid].population}</td>
+								<td>{store.planetsList[params.theid].orbital_period}</td>
+								<td>{store.planetsList[params.theid].rotation_period}</td>
+								<td>{store.planetsList[params.theid].diameter}</td>
 							</tr>
 						</tbody>
 					</table>
@@ -68,6 +68,6 @@ export const DetallesPersonas = props => {
 	);
 };
 
-DetallesPersonas.propTypes = {
+DetallesPlanetas.propTypes = {
 	match: PropTypes.object
 };
