@@ -1,4 +1,4 @@
-const getState = ({ getStore, getActions, setStore }) => {
+const getState = ({ setStore, getStore }) => {
 	return {
 		store: {
 			favorites: [],
@@ -18,7 +18,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const response = await fetch(URL, CONFIG);
 				const json = await response.json();
 
-				console.log(">>DATA>>", json);
 				setStore({ peopleList: json.results });
 			},
 			fetchPlanets: async () => {
@@ -32,8 +31,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const response = await fetch(URL, CONFIG);
 				const json = await response.json();
 
-				console.log(">>DATA>>", json);
 				setStore({ planetsList: json.results });
+			},
+			setFavorites: name => {
+				const store = getStore();
+				setStore({ favorites: [...store.favorites, name] });
 			}
 		}
 	};

@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Navbar, Image, Nav, DropdownButton, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import starlogo from "../../img/starlogo.png";
+import { Context } from "../store/appContext";
 
 export const NavbarMenu = () => {
+	const { store, actions } = useContext(Context);
+
 	return (
 		<div className="d-flex flex-column">
 			<Navbar className="container-flux  bg-warning">
@@ -23,10 +26,14 @@ export const NavbarMenu = () => {
 				</Nav>
 
 				<div className="mx-5">
-					<DropdownButton id="dropdown-basic-button" title="Favoritos">
-						<Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-						<Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-						<Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+					<DropdownButton id="dropdown-basic-button" title={`Favoritos ${store.favorites.length}`}>
+						{store.favorites.map((item, index) => {
+							return (
+								<Dropdown.Item key={index} href="#/action-1">
+									{item}
+								</Dropdown.Item>
+							);
+						})}
 					</DropdownButton>
 				</div>
 			</Navbar>

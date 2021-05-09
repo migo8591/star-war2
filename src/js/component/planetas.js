@@ -46,24 +46,15 @@ export const Planetas = () => {
 											</ButtonGroup>
 										</Link>
 										<ButtonGroup className=" ml-5" aria-label="Second group">
-											<Button variant="danger">
-												<i className="far fa-heart" />
-											</Button>
-										</ButtonGroup>
-									</ButtonToolbar>
-
-									{/* <ButtonToolbar aria-label="Toolbar with Button groups">
-											
-												<Button variant="primary" size="lg">
-													Learn more!
-												</Button>
-											</Link>
-											<Link to={"/detallesPlanetas/" + index}>
-												<Button variant="secondary" size="sm">
+											{store.favorites.includes(item.name) ? null : (
+												<Button
+													onClick={() => actions.setFavorites(item.name)}
+													variant="danger">
 													<i className="far fa-heart" />
 												</Button>
-											</Link>
-									</ButtonToolbar> */}
+											)}
+										</ButtonGroup>
+									</ButtonToolbar>
 								</Card.Body>
 							</Card>
 						</div>
