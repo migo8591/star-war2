@@ -55,7 +55,7 @@ export const DetallesPlanetas = props => {
 						<div className="row">
 							<div className="col-9">
 								<Link to="/">
-									<button type="button" className="btn btn-primary mr-2">
+									<button type="button" className="btn btn-success mr-2">
 										Regresar
 									</button>
 								</Link>

@@ -9,11 +9,11 @@ export const Personas = () => {
 
 	useEffect(() => {
 		actions.fetchPeople();
-	}, []);
+	});
 
 	return (
 		<div>
-			<span>{JSON.stringify(store.favorites)}</span>
+			{/* <span>{JSON.stringify(store.favorites)}</span> */}
 
 			<div className="wrapper">
 				{store.peopleList.map((item, index) => {

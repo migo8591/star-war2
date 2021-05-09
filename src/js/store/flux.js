@@ -7,6 +7,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		},
 		actions: {
 			fetchPeople: async () => {
+				//<=nombre de la acción
 				const URL = "https://swapi.dev/api/people/";
 				const CONFIG = {
 					method: "GET",
