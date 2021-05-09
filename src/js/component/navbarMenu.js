@@ -26,14 +26,34 @@ export const NavbarMenu = () => {
 				</Nav>
 
 				<div className="mx-5">
-					<DropdownButton id="dropdown-basic-button" title={`Favoritos ${store.favorites.length}`}>
-						{store.favorites.map((item, index) => {
-							return (
-								<Dropdown.Item key={index} href="#/action-1">
-									{item}
-								</Dropdown.Item>
-							);
-						})}
+					<DropdownButton
+						id="dropdown-basic-button"
+						variant="dark"
+						title={"Favorites " + store.favorites.length}>
+						{store.favorites.length == 0 ? (
+							<Dropdown.Item>Empty</Dropdown.Item>
+						) : (
+							store.favorites.map((item, index) => {
+								return (
+									<Dropdown.Item
+										eventKey={index}
+										key={index}
+										onClick={() => actions.deleteFavorite(index)}>
+										{item.type == "people" ? (
+											<div>
+												<i>{item}</i>
+												<i className="far fa-trash-alt" />
+											</div>
+										) : (
+											<div>
+												<i>{item}</i>
+												<i className="far fa-trash-alt" />
+											</div>
+										)}
+									</Dropdown.Item>
+								);
+							})
+						)}
 					</DropdownButton>
 				</div>
 			</Navbar>

@@ -36,6 +36,12 @@ const getState = ({ setStore, getStore }) => {
 			setFavorites: name => {
 				const store = getStore();
 				setStore({ favorites: [...store.favorites, name] });
+			},
+			deleteFavorite: id => {
+				const store = getStore();
+
+				const newFavorites = store.favorites.filter((item, i) => i !== id);
+				setStore({ favorites: newFavorites });
 			}
 		}
 	};
