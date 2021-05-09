@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { Card, Button, ButtonToolbar, ButtonGroup } from "react-bootstrap";
-import personajes from "../../img/personajes.jpg";
+import planetas from "../../img/planetas.jpg";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
@@ -20,7 +20,7 @@ export const Planetas = () => {
 					return (
 						<div className="item" key={index}>
 							<Card className="bg-warning" style={{ width: "18rem" }}>
-								<Card.Img variant="top" src={personajes} />
+								<Card.Img variant="top" src={planetas} />
 								<Card.Body>
 									<Card.Title>{item.name}</Card.Title>
 									<Card.Text>

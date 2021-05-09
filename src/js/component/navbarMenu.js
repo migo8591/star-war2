@@ -10,13 +10,13 @@ export const NavbarMenu = () => {
 	return (
 		<div className="d-flex flex-column">
 			<Navbar className="container-flux  bg-warning">
-				<Navbar.Brand>
+				<Navbar.Brand className="mx-auto">
 					<Link to="/">
 						<Image src={starlogo} width="40" height="40" alt="Star Wars" />
 					</Link>
 				</Navbar.Brand>
 
-				<Nav className="mr-auto">
+				<Nav className="mx-auto">
 					{/* <Link className="nav-link text-primary" to="/planetas">
 						Planetas
 					</Link>
@@ -25,10 +25,10 @@ export const NavbarMenu = () => {
 					</Link> */}
 				</Nav>
 
-				<div className="mx-5">
+				<div className="mx-auto">
 					<DropdownButton
 						id="dropdown-basic-button"
-						variant="dark"
+						variant="primary"
 						title={"Favorites " + store.favorites.length}>
 						{store.favorites.length == 0 ? (
 							<Dropdown.Item>Empty</Dropdown.Item>
